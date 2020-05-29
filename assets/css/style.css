@@ -97,6 +97,7 @@ nav ul li a {
     right: 16px;
     background-color: var(--accent-color);
     padding: 3px;
+    font-size: 35px;
 }
 /**/
 
@@ -264,9 +265,6 @@ nav ul li a {
     
     .hero h3 {
         font-size: 15px;
-        bottom: 70px;
-        position: relative;
-        left: 150px;
     }
 
     #contact-me nav ul li a {
