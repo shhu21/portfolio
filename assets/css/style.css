@@ -8,17 +8,19 @@
     --text-color: rgb(50, 51, 58);
     --background-color:#cac6d8;
     --accent-color: #9dcae0;
-  }
+}
 
 body {
     /* color: var(--background-color); */
     font-family: Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    font-weight: lighter;
 }
 
 /* Header */
 header {
     padding: 20px 35px;
-    background-color: rgb(50, 51, 58);
+    background-color: var(--text-color);
     color: var(--text-color);
     display: flex;
     justify-content: space-between;
@@ -67,9 +69,7 @@ nav ul li a {
 
 /* Hero */
 .hero img{
-    /* background-image: url(../images/hero-bg.jpg); */
     background-attachment: fixed;
-    /* background-position: 80%; */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -79,8 +79,12 @@ nav ul li a {
     width: 100%;
 }
 
-.hero h3{
+.hero h3 {
+    text-align: right;
     margin: -5rem 1rem 1rem 1rem;
+    /* TODO: background color is hidden by the hero image */
+    background-color: var(--accent-color);
+    padding: 3px;
 }
 /**/
 
@@ -141,21 +145,71 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* TODO: overlay doesn't cover the image */
+    box-shadow: inset 0 0 0 1000px rgba(119, 166, 219, 0.2);
 }
 
+.grid-item:hover {
+    box-shadow: none;
+}
+
+/* TODO: grid image doesn't fit to the cell */
 .grid-item img {
     width: 100%;
-    /* height: 100%; */
-    /* object-fit: cover; */
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.grid-item h4 {
+.label {
+    background-color: var(--accent-color);
+    padding: 10px;
+}
+
+.label h4 {
     margin: -5px 0 0 -45px;
 }
+
+.label h5 {
+    font-size: 13px;
+}
+
 /**/
 
 /* Contact Me */
 #contact-me nav ul li a {
     color: var(--text-color);
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    .content-border {
+        width: 75%;
+    }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        width: 5%;
+    }
+
+    .content-border {
+        width: 65%;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    .hero h3 {
+        font-size: 15px;
+        margin: -4rem 1rem 5px 1rem;
+    }
+
+    #contact-me nav ul li a {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }
