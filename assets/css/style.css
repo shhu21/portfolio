@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: rgb(50, 51, 58);
+    --background-color:#cac6d8;
+    --accent-color: #9dcae0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    font-weight: lighter;
+    background-color: var(--background-color);
+}
+
+/* Header */
+header {
+    padding: 20px 35px;
+    background-color: var(--text-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0 0 0 -5rem;
+    background-color: var(--accent-color);
+    padding: 0 1rem 0 7rem;
+}
+
+nav {
+    margin: 7px 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    box-shadow: inset 0 -3px 0 -1px var(--accent-color);
+    transition: box-shadow .15s ease-in-out;
+}
+
+a:hover {
+    box-shadow: inset 0 -40px 0 -1px var(--accent-color);
+    color: var(--text-color);
+}
+
+/* TODO: add hover, accent color fill front bottom to top*/
+nav ul li a {
+    padding: 10px 15px;
+    margin: 0 10px;
+    color: var(--accent-color);
+    font-size: 1.1vw;
+    border-color: var(--accent-color);
+    border-bottom: 3px solid;
+    text-align: center;
+}
+/**/
+
+/* Hero */
+.hero {
+    position: relative;
+}
+.hero img{
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.hero h3 {
+    text-align: right;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    background-color: var(--accent-color);
+    padding: 3px;
+    font-size: 35px;
+}
+/**/
+
+.content {
+    /* background-color: var(--background-color); */
+    padding: 5rem 1rem;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+
+.content-border {
+    border-color: var(--text-color);
+    border-left: 3px solid;
+    padding-left: 3rem;
+    width: 85%;
+    margin: 15px;
+}
+
+.title {
+    font-size: 30px;
+    width: 10%;
+}
+
+/* Work */
+.grid-wrapper {
+    display: grid;
+    width: 85%;
+    justify-content: left;
+}
+
+.grid-container {
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+    padding: 1em;
+    color: var(--text-color);
+}
+
+.grid-item:first-child {
+    grid-column-start: 1; 
+    grid-column-end: 3; 
+    grid-row-start: 1; 
+    grid-row-end: 3;
+}
+
+.grid-item {
+    padding: 15px 0;
+    border: 4px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.run-buddy {
+    background-image: url('../images/run-buddy.png');
+}
+
+.campus-mate {
+    background-image: url('../images/campus-mate.png');
+}
+
+.ig-api-practice {
+    background-image: url('../images/ig-api-practice.png');
+}
+
+.challenge-1 {
+    background-image: url('../images/challenge-1.png');
+}
+
+.practice-html {
+    background-image: url('../images/practice-html.png');
+}
+
+.grid-img {
+    width: 100%;
+    min-height: 210px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item:hover .grid-img::after {
+    opacity: 0;
+}
+
+.grid-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(77, 111, 151, 0.2);
+    opacity: 1;  
+    transition: linear;
+}
+
+.label {
+    position: absolute;
+    bottom: 45%;
+    left: 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    z-index: 1;
+}
+
+.label h5 {
+    font-size: 11px;
+}
+/**/
+
+/* Contact Me */
+#contact-me nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    box-shadow: inset 0 -3px 0 -1px var(--text-color);
+    transition: box-shadow .15s ease-in-out;
+}
+
+#contact-me nav ul li a:hover {
+    box-shadow: inset 0 -40px 0 -1px var(--text-color);
+    color: var(--accent-color);
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    .content-border {
+        width: 75%;
+    }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        width: 5%;
+    }
+
+    .content-border {
+        width: 65%;
+    }
+
+    .label h4 {
+        font-size: 15px;
+    }
+
+    .label h5 {
+        font-size: 8px;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    .content {
+        margin-top: 0;
+    }
+    
+    .hero h3 {
+        font-size: 15px;
+    }
+
+    #contact-me nav ul li a {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .label h4 {
+        font-size: 8px;
+    }
+
+    .label h5 {
+        font-size: 7px;
+    }
+}
