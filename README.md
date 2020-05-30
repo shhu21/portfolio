@@ -18,7 +18,7 @@ Create a professional portfolio using the following mock-up.
 * Removes color overlay on hover.
 * Opens a link to the respective projects in a new tab on click.
 
-### "Contact Me' Section
+### 'Contact Me' Section
 * Color fill animation on hover (same as the header's navigation bar).
 * Opens links to the respective websites on click.
 * 'Email' and the phone number prompt respective actions on click.
