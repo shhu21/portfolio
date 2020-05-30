@@ -130,7 +130,7 @@ nav ul li a {
 .grid-wrapper {
     display: grid;
     width: 85%;
-    justify-content: center;
+    justify-content: left;
 }
 
 .grid-container {
